@@ -10,12 +10,12 @@
 
 // --------------------   HELPER FUNCTIONS   --------------------
 
-void ugly_print_tree_helper(const Node* node) {
+void ugly_print_tree_helper(const Node *node) {
     if (node == nullptr) {
         return;
     }
-    Node* left = node->left;
-    Node* right = node->right;
+    Node *left = node->left;
+    Node *right = node->right;
     std::cout << node->data << ": ";
     if (left == nullptr) {
         std::cout << "__";
@@ -34,7 +34,7 @@ void ugly_print_tree_helper(const Node* node) {
     ugly_print_tree_helper(right);
 }
 
-int tree_height(Node* node) {
+int tree_height(Node *node) {
     if (node == nullptr) {
         return 0;
     }
@@ -88,14 +88,14 @@ void print_spaces(int quantity) {
 // If you need to visualize a tree that is either taller or has bigger numbers,
 // look at `ugly_print_tree`, which is under `pretty_print_tree`. Its printout
 // is a bit harder to read, but can work for bigger trees.
-void pretty_print_tree(const BST& tree) {
-    Node* root = tree.getRootNode();
+void pretty_print_tree(const BST &tree) {
+    Node *root = tree.getRootNode();
     if (root == nullptr) {
         std::cout << "Empty tree" << std::endl;
         return;
     }
 
-    std::queue<Node*> traversal;
+    std::queue<Node *> traversal;
     traversal.push(root);
 
     int height = tree_height(root);
@@ -112,7 +112,7 @@ void pretty_print_tree(const BST& tree) {
             }
             print_spaces_before = true;
 
-            Node* node = traversal.front();
+            Node *node = traversal.front();
             traversal.pop();
 
             if (node == nullptr) {
@@ -160,8 +160,8 @@ void pretty_print_tree(const BST& tree) {
 // you could also use `pretty_print_tree`, which is above. Its printout can be
 // easier to read if the tree is not too tall and doesn't have too big of
 // numbers.
-void ugly_print_tree(const BST& tree) {
-    Node* root = tree.getRootNode();
+void ugly_print_tree(const BST &tree) {
+    Node *root = tree.getRootNode();
     if (root == nullptr) {
         std::cout << "Empty tree" << std::endl;
     } else {
@@ -169,7 +169,7 @@ void ugly_print_tree(const BST& tree) {
     }
 }
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
     // Write your test code here
 
     return 0;

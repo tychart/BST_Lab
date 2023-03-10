@@ -10,12 +10,12 @@
 
 // --------------------   HELPER FUNCTIONS   --------------------
 
-void ugly_print_tree_helper(const Node* node) {
+void ugly_print_tree_helper(const Node *node) {
     if (node == nullptr) {
         return;
     }
-    Node* left = node->left;
-    Node* right = node->right;
+    Node *left = node->left;
+    Node *right = node->right;
     std::cout << node->data << ": ";
     if (left == nullptr) {
         std::cout << "__";
@@ -34,7 +34,7 @@ void ugly_print_tree_helper(const Node* node) {
     ugly_print_tree_helper(right);
 }
 
-int tree_height(Node* node) {
+int tree_height(Node *node) {
     if (node == nullptr) {
         return 0;
     }
@@ -88,14 +88,14 @@ void print_spaces(int quantity) {
 // If you need to visualize a tree that is either taller or has bigger numbers,
 // look at `ugly_print_tree`, which is under `pretty_print_tree`. Its printout
 // is a bit harder to read, but can work for bigger trees.
-void pretty_print_tree(const BST& tree) {
-    Node* root = tree.getRootNode();
+void pretty_print_tree(const BST &tree) {
+    Node *root = tree.getRootNode();
     if (root == nullptr) {
         std::cout << "Empty tree" << std::endl;
         return;
     }
 
-    std::queue<Node*> traversal;
+    std::queue<Node *> traversal;
     traversal.push(root);
 
     int height = tree_height(root);
@@ -112,7 +112,7 @@ void pretty_print_tree(const BST& tree) {
             }
             print_spaces_before = true;
 
-            Node* node = traversal.front();
+            Node *node = traversal.front();
             traversal.pop();
 
             if (node == nullptr) {
@@ -160,8 +160,8 @@ void pretty_print_tree(const BST& tree) {
 // you could also use `pretty_print_tree`, which is above. Its printout can be
 // easier to read if the tree is not too tall and doesn't have too big of
 // numbers.
-void ugly_print_tree(const BST& tree) {
-    Node* root = tree.getRootNode();
+void ugly_print_tree(const BST &tree) {
+    Node *root = tree.getRootNode();
     if (root == nullptr) {
         std::cout << "Empty tree" << std::endl;
     } else {
@@ -254,7 +254,8 @@ void part2() {
     std::cout << "\nPretty printing the tree...\n" << std::endl;
     pretty_print_tree(tree);
 
-    std::cout << "\nInserting 8, 4, 12, 2, 6, 10, 14, 1, 3, 5, 7,\n          9, 11, 13, and 15 into the tree..." << std::endl;
+    std::cout << "\nInserting 8, 4, 12, 2, 6, 10, 14, 1, 3, 5, 7,\n          9, 11, 13, and 15 into the tree..."
+              << std::endl;
     tree.insert(8);
     tree.insert(4);
     tree.insert(12);
@@ -292,7 +293,8 @@ void part3() {
     std::cout << "\nPretty printing the tree...\n" << std::endl;
     pretty_print_tree(tree);
 
-    std::cout << "\nInserting 8, 4, 12, 2, 6, 10, 14, 1, 3, 5, 7,\n          9, 11, 13, and 15 into the tree..." << std::endl;
+    std::cout << "\nInserting 8, 4, 12, 2, 6, 10, 14, 1, 3, 5, 7,\n          9, 11, 13, and 15 into the tree..."
+              << std::endl;
     tree.insert(8);
     tree.insert(4);
     tree.insert(12);
@@ -408,7 +410,7 @@ void part4() {
     pretty_print_tree(tree);
 }
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
     if (argc < 2) {
         std::cerr << "Usage: " << argv[0] << " [TEST]" << std::endl;
         std::cerr << "where TEST is one of 1, 2, 3, 4, or all" << std::endl;
@@ -438,7 +440,7 @@ int main(int argc, char* argv[]) {
         part4();
     } else {
         std::cerr << test << " is not a valid test to run. The valid options are 1, 2, 3, 4, and all"
-            << std::endl;
+                  << std::endl;
         return 1;
     }
 

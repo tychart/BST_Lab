@@ -8,7 +8,7 @@ class BSTInterface {
 public:
     virtual ~BSTInterface() = default;
 
-    virtual Node* getRootNode() const = 0;
+    virtual Node *getRootNode() const = 0;
 
     virtual bool insert(int data) = 0;
 
