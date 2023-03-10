@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "NodeInterface.h"
+#include "Node.h"
 
 class BSTInterface {
 public:
