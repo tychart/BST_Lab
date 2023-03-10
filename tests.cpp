@@ -10,23 +10,23 @@
 
 // --------------------   HELPER FUNCTIONS   --------------------
 
-void ugly_print_tree_helper(const NodeInterface* node) {
+void ugly_print_tree_helper(const Node* node) {
     if (node == nullptr) {
         return;
     }
-    NodeInterface* left = node->getLeftChild();
-    NodeInterface* right = node->getRightChild();
-    std::cout << node->getData() << ": ";
+    Node* left = node->left;
+    Node* right = node->right;
+    std::cout << node->data << ": ";
     if (left == nullptr) {
         std::cout << "__";
     } else {
-        std::cout << left->getData();
+        std::cout << left->data;
     }
     std::cout << ' ';
     if (right == nullptr) {
         std::cout << "__";
     } else {
-        std::cout << right->getData();
+        std::cout << right->data;
     }
     std::cout << std::endl;
 
@@ -34,11 +34,11 @@ void ugly_print_tree_helper(const NodeInterface* node) {
     ugly_print_tree_helper(right);
 }
 
-int tree_height(NodeInterface* node) {
+int tree_height(Node* node) {
     if (node == nullptr) {
         return 0;
     }
-    return std::max(tree_height(node->getLeftChild()), tree_height(node->getRightChild())) + 1;
+    return std::max(tree_height(node->left), tree_height(node->right)) + 1;
 }
 
 constexpr int num_spaces_for_level(int height, int level) {
@@ -89,13 +89,13 @@ void print_spaces(int quantity) {
 // look at `ugly_print_tree`, which is under `pretty_print_tree`. Its printout
 // is a bit harder to read, but can work for bigger trees.
 void pretty_print_tree(const BST& tree) {
-    NodeInterface* root = tree.getRootNode();
+    Node* root = tree.getRootNode();
     if (root == nullptr) {
         std::cout << "Empty tree" << std::endl;
         return;
     }
 
-    std::queue<NodeInterface*> traversal;
+    std::queue<Node*> traversal;
     traversal.push(root);
 
     int height = tree_height(root);
@@ -112,7 +112,7 @@ void pretty_print_tree(const BST& tree) {
             }
             print_spaces_before = true;
 
-            NodeInterface* node = traversal.front();
+            Node* node = traversal.front();
             traversal.pop();
 
             if (node == nullptr) {
@@ -120,9 +120,9 @@ void pretty_print_tree(const BST& tree) {
                 traversal.push(nullptr);
                 traversal.push(nullptr);
             } else {
-                std::cout << std::setw(2) << std::right << std::setfill(' ') << node->getData();
-                traversal.push(node->getLeftChild());
-                traversal.push(node->getRightChild());
+                std::cout << std::setw(2) << std::right << std::setfill(' ') << node->data;
+                traversal.push(node->left);
+                traversal.push(node->right);
             }
         }
         if (level != height - 1) {
@@ -161,7 +161,7 @@ void pretty_print_tree(const BST& tree) {
 // easier to read if the tree is not too tall and doesn't have too big of
 // numbers.
 void ugly_print_tree(const BST& tree) {
-    NodeInterface* root = tree.getRootNode();
+    Node* root = tree.getRootNode();
     if (root == nullptr) {
         std::cout << "Empty tree" << std::endl;
     } else {
