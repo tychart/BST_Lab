@@ -1,24 +1,22 @@
 # BST Lab
 
 ## Purpose
-To learn how to add and remove from a binary search tree. This lab will prepare
+To learn how to add to, remove from, and search in a binary search tree. 
+
+This lab will prepare
 you for the upcoming AVL lab.
 
-## :warning: WARNING :warning:
-* You will build off of your code in this lab for the next (AVL) lab.  If you
-  want to have a miserable time finishing the AVL lab, use code that you don't
-  understand for this lab.  In other words, don't use any code you don't
-  understand.
-* In the AVL lab, you will have to go back up the tree to rebalance it after
-  inserting or removing a node. Therefore, it is **strongly recommended** that
-  you implement your insert and remove methods using recursion in this lab. If
-  you do so, when you do the AVL lab, you will be able to easily handle
-  rebalancing after making the recursive call. If you implement insert or remove
-  iteratively (that is, using for loops and parent pointers) in this lab, when
-  you do the AVL lab, you will either:
-  1. End up with a hundreds-of-lines-long nightmarish codebase that the TAs may
-     not help you with; or
-  2. Have to reimplement insert and remove.
+### A word to the wise
+
+You will build off your code in this lab for the following AVL lab.
+
+An AVL tree is a special kind of binary search tree. 
+In order to implement the AVL properly, it is critical that you follow the 
+instructions for implementing a regular BST correctly.
+
+1. Implement this lab using recursion. 
+   There are other ways to implement a BST, but they do not extend well to AVL.
+1. Make sure you understand all the code you write for this lab. Understand how the recursion works.
 
 ## Background
 A binary search tree (BST), which may sometimes be called an ordered or sorted
@@ -30,45 +28,49 @@ following properties:
   node's value.
 * The right subtree of a node contains only nodes with values greater than the
   node's value.
-* There must be no duplicate nodes.
+* There are no duplicate values.
 * Both the left and right subtrees of a node also must be binary search trees
   (each subtree must have the first three properties).
-  [Wikipedia](https://en.wikipedia.org/wiki/Binary_search_tree)
+  
+[Wikipedia: Binary Search Tree](https://en.wikipedia.org/wiki/Binary_search_tree)
 
 ## Requirements
-You will need the files in this repository to complete this assignment.  Clone
+You will need the files in this repository to complete this assignment. Clone
 the repository to get started.
 
 ### Part 1 - Inserting nodes into to the tree (15 points)
-* Implement the `BSTInterface` `getRootNode()` and `insert()` methods.
-* A Node class is provided for you in Node.h. You can read the class to see how
-  it works. You'll make a node with `new Node(data)`, access its left and right
+* Implement the `getRootNode()` and `insert()` methods from the `BSTInterface`.
+* A `Node` class is provided for you in `Node.h`. You must use this class in your implementation of BST. 
+  You'll make a node with `new Node(data)`, access its left and right
   pointers with `node->left` and `node->right`, and access its data with
   `node->data`.
 * If a call to `insert` is attempting to add an element that is already in the
   tree, you should not insert it.
-* The return value represents whether the data was inserted or not.
+* The return value indicates whether the data was inserted or not.
 
 ### Part 2 - Contains (15 points)
 * Implement the `contains()` method from `BSTInterface`.
-* This one is safe to implement iteratively (that is, using loops instead of
-  recursion) if you'd like.
 
 ### Part 3 - Remove (15 points)
 * Implement the `remove()` method from `BSTInterface`.
 * If the element to be removed is not in the tree, `remove` should do nothing.
-* The return value represents whether an element was removed or not.
+* The return value indicates whether an element was removed or not.
 * There are multiple correct methods for removing nodes from a tree, but each
   method may result in a different tree. In order to make sure that your tree
-  matches ours, when removing a node with only one child, replace that node with
-  its child. When removing nodes with two children, use the in-order predecessor
+  matches the tree the tests expect:
+  * When removing a node with only one child, replace that node with
+  its child. 
+  * When removing nodes with two children, use the in-order predecessor
   of the node to be removed.
 
 ### Part 4 - Clear (15 points)
 * Implement the `clear()` method from `BSTInterface`.
 
-## Hint - passing `Node` pointers by reference
-When you write `insert` and `remove` (recursively, I hope), you'll need to be
+## Tips
+
+### Passing `Node` pointers by reference
+
+When you write `insert` and `remove`, you'll need to be
 able to update pointers. For instance, in `insert`, when you see a `nullptr`,
 that's when you need to insert a node:
 ```cpp
@@ -80,6 +82,7 @@ bool insert_helper(Node* node, int data) {
     // handle other cases
 }
 ```
+
 So you might be tempted to write your function like this:
 ```cpp
 bool insert_helper(Node* node, int data) {
