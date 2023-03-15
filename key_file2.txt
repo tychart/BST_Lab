@@ -4,7 +4,7 @@ Pretty printing the tree...
 
 Empty tree
 
-Inserting 8, 4, 12, 2, 6, 10, 14, 1, 3, 5, 7,
+Inserting 8, 4, 12, 2, 6, 10, 14, 1, 3, 5,
           9, 11, 13, and 15 into the tree...
 Pretty printing the tree...
 
@@ -14,12 +14,13 @@ Pretty printing the tree...
 
    2       6      10      14
 
- 1   3   5   7   9  11  13  15
+ 1   3   5       9  11  13  15
 
 tree.contains(14) = true
 tree.contains(4) = true
 tree.contains(5) = true
 tree.contains(15) = true
+tree.contains(7) = false
 tree.contains(2) = true
 tree.contains(-3) = false
 tree.contains(17) = false

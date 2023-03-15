@@ -66,6 +66,92 @@ the repository to get started.
 ### Part 4 - Clear (15 points)
 * Implement the `clear()` method from `BSTInterface`.
 
+## Testing your code
+
+You are provided with two files for testing: `scratch.cpp` and `tests.cpp`. If
+you download this repository and directly open the folder as a project in CLion,
+CLion will be automatically configured with both files ready to be compiled and
+executed. You can switch between the two using the drop-down menu to the left of
+the green play button.
+
+`scratch.cpp` is provided to you as a convenience. You can use it to write your
+own test cases.
+
+`tests.cpp` has the actual tests that you will be graded on. The output it
+generates using your implementation of a BST will be expected to exactly match
+the contents of `key_file1.txt` for part 1, `key_file2.txt` for part 2, and so
+on.
+
+`printing.h` defines two functions that will be used in `tests.cpp`, and which
+you can also use in `scratch.cpp`: `pretty_print_tree` and `ugly_print_tree`.
+`pretty_print_tree` outputs a representation of your tree that is in a tree-like
+shape. For instance, if `tree` has the following structure:
+
+```
+       15
+      /  \
+     /    \
+   13      17
+  /       /  \
+12      16    18
+```
+
+then `pretty_print_tree(tree)` will output the following:
+
+```
+      15
+
+  13      17
+
+12      16  18
+```
+
+Hopefully, it shouldn't be too hard to tell which nodes are the children of
+which.
+
+One disadvantage of `pretty_print_tree` is that the width of the printout
+explodes as the tree gets taller. For instance, the printout of a tree with
+height 6 will be around 125 characters wide, and the width about doubles with
+each additional level. Secondly, the function is only written to deal with
+numbers that have at most 2 digits. Therefore, if you need to visualize a tree
+that is either taller or has bigger numbers, `ugly_print_tree` might be a better
+option. Its output is a bit harder to read, but can work for bigger trees.
+
+`ugly_print_tree` prints each node in the following format:
+
+```
+node: left_child right_child
+```
+
+where `node` is replaced with the node's number, and both `left_child` and
+`right_child` are replaced with the node's child, or `__` if the node doesn't
+have one.
+
+For instance, if the `tree` has the following structure:
+
+```
+       15
+      /  \
+     /    \
+   13      17
+  /       /  \
+12      16    18
+```
+
+then `ugly_print_tree(tree)` will output the following:
+
+```
+15: 13 17
+13: 12 __
+12: __ __
+17: 16 18
+16: __ __
+18: __ __
+```
+
+Once you have finished implementing your binary search tree, turn your `BST.h`
+and any other files you write in to Gradescope.
+
 ## Tips
 
 ### Passing `Node` pointers by reference
