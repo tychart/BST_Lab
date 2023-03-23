@@ -3,7 +3,7 @@ project(bst_lab)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(scratch scratch.cpp)
+add_executable(scratch scratch.cpp BST.cpp BST.h)
 
-add_executable(tests tests.cpp)
+add_executable(tests tests.cpp BST.cpp BST.h)
 
