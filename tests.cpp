@@ -6,7 +6,7 @@
 void part1() {
     std::cout << "--- Part 1 output ---" << std::endl;
 
-    BST tree(Node(0));
+    BST tree;
 
     std::cout << "\nPretty printing the tree...\n" << std::endl;
     pretty_print_tree(tree);

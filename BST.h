@@ -12,11 +12,12 @@ class BST : public BSTInterface {
 
     Node* rootNode;
 
+    bool _insert(int data, Node* currNode);
 
 
 public:
     BST();
-    BST(Node rootNode);
+//    BST(Node rootNode);
 
     ~BST();
 
