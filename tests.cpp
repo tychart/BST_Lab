@@ -6,7 +6,7 @@
 void part1() {
     std::cout << "--- Part 1 output ---" << std::endl;
 
-    BST tree;
+    BST tree(Node(0));
 
     std::cout << "\nPretty printing the tree...\n" << std::endl;
     pretty_print_tree(tree);
@@ -83,7 +83,7 @@ void part1() {
 void part2() {
     std::cout << "--- Part 2 output ---" << std::endl;
 
-    BST tree;
+    BST tree(Node(0));
 
     std::cout << "\nPretty printing the tree...\n" << std::endl;
     pretty_print_tree(tree);
@@ -122,7 +122,7 @@ void part2() {
 void part3() {
     std::cout << "--- Part 3 output ---" << std::endl;
 
-    BST tree;
+    BST tree(Node(0));
 
     std::cout << "\nPretty printing the tree...\n" << std::endl;
     pretty_print_tree(tree);
@@ -205,7 +205,7 @@ void part3() {
 void part4() {
     std::cout << "--- Part 4 output ---" << std::endl;
 
-    BST tree;
+    BST tree(Node(0));
 
     std::cout << "\nPretty printing the tree...\n" << std::endl;
     pretty_print_tree(tree);

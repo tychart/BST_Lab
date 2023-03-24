@@ -6,16 +6,21 @@
 
 #include "PrintStuff.h"
 #include "BSTInterface.h"
+#include "Node.h"
 
 class BST : public BSTInterface {
+
+    Node* rootNode;
+
+
+
 public:
-    BST() {
-        println("test?????");
-    }
+    BST();
+    BST(Node rootNode);
 
-    ~BST() = default;
+    ~BST();
 
-    Node *getRootNode() const;
+    Node* getRootNode() const;
 
     bool insert(int data);
 

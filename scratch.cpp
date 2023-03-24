@@ -9,9 +9,9 @@ int main(int argc, char *argv[]) {
     // the functions `pretty_print_tree` and `ugly_print_tree`, which you can
     // use to print a representation of your tree like so:
     println("Start of Program:");
-    BST tree;
-//    pretty_print_tree(tree);
-//    ugly_print_tree(tree);
+    BST tree(Node(3));
+    pretty_print_tree(tree);
+    ugly_print_tree(tree);
 //extra change
     println("test?");
 
