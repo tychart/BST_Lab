@@ -22,6 +22,8 @@ class BST : public BSTInterface {
 
     int _getLargestValueInTree(Node* currNode);
 
+    void _clear(Node* &currNode);
+
 public:
     BST();
 //    BST(Node rootNode);

@@ -15,7 +15,8 @@ BST::BST() {
 //}
 
 BST::~BST() {
-    println("I'm supposed to be deleted now");
+//    println("I'm supposed to be deleted now");
+    clear();
 }
 
 Node* BST::getRootNode() const {
@@ -56,7 +57,7 @@ bool BST::insert(int data) {
 bool BST::_insert(int data, Node* currNode) {
 
     if(currNode-> data == data) {
-        std::cout << "Warning: Value already exists, so nothing will be done." << std::endl;
+//        std::cout << "Warning: Value already exists, so nothing will be done." << std::endl;
         return false;
     }
 
@@ -96,7 +97,7 @@ bool BST::_remove(int data, Node* &currNode) {
             currNode = nullptr;
             return true;
         }
-        println("Warning: data to remove not found");
+//        println("Warning: data to remove not found");
         return false;
     }
 
@@ -105,13 +106,7 @@ bool BST::_remove(int data, Node* &currNode) {
             int replaceData = _getLargestValueInTree(currNode-> left);
             currNode-> data = replaceData;
             _remove(replaceData, currNode-> left);
-
-
-
-
-
-
-            return false; ///////Temporary
+            return true;
         } else if (currNode-> left != nullptr && currNode-> right == nullptr) {
             Node* temp = currNode-> left;
             delete currNode;
@@ -156,5 +151,24 @@ bool BST::contains(int data) {
 }
 
 void BST::clear() {
+    _clear(rootNode);
+}
 
+void BST::_clear(Node* &currNode) {
+    if (currNode == nullptr) {return;}
+    if (_isLeaf(currNode)) {
+        delete currNode;
+        currNode = nullptr;
+        return;
+    }
+    if (currNode-> left != nullptr) {
+        _clear(currNode-> left);
+    }
+    if (currNode-> right != nullptr) {
+        _clear(currNode-> right);
+    }
+
+    delete currNode;
+    currNode = nullptr;
+    return;
 }

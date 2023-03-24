@@ -33,7 +33,9 @@ int main(int argc, char *argv[]) {
 
 
     pretty_print_tree(tree);
-
+    cout << "Clearing tree!" << endl;
+    tree.clear();
+    pretty_print_tree(tree);
 
 //    ugly_print_tree(tree);
 //extra change
