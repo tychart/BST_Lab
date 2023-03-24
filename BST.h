@@ -14,6 +14,8 @@ class BST : public BSTInterface {
 
     bool _insert(int data, Node* currNode);
 
+    bool _search(int data, Node* currNode);
+
 
 public:
     BST();
