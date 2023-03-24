@@ -1,0 +1,19 @@
+--- Part 4 output ---
+
+Pretty printing the tree...
+
+Empty tree
+
+Inserting 1, 2, and 3 into the tree...
+Pretty printing the tree...
+
+       1
+
+           2
+
+             3
+
+Clearing the tree...
+Pretty printing the tree...
+
+Empty tree
