@@ -25,18 +25,22 @@ Node* BST::getRootNode() const {
 }
 
 bool BST::_search(int data, Node *currNode) {
-    if(currNode-> data == data) {
-        return true;
-    }
+    if(currNode == nullptr) {return false;}
+
+    if(currNode-> data == data) {return true;}
 
     if(data < currNode-> data) {
-        if(currNode-> left == nullptr) {return false;}
         return _search(data, currNode-> left);
     } else {
-        if(currNode-> right == nullptr) {return false;}
-        return _search(data, currNode-> left);
+        return _search(data, currNode-> right);
     }
 
+}
+
+bool BST::_isLeaf(Node* currNode) {
+    if(currNode->left == nullptr && currNode-> right == nullptr) {
+        return true;
+    } else {return false;}
 }
 
 bool BST::insert(int data) {
@@ -82,8 +86,35 @@ bool BST::remove(int data) {
 
 }
 
-bool BST::contains(int data) {
+bool BST::_remove(int data, Node *currNode) {
+    if(currNode == nullptr) {return false;}
 
+//// Will remove if node has no children
+    if(_isLeaf(currNode)) {
+        if(currNode-> data == data) {
+            delete currNode;
+            return true;
+        }
+        return false;
+    }
+
+    if (data < currNode-> data) {
+        if(currNode-> left == nullptr) {
+            println("Warning: data to remove not found");
+            return false;
+        }
+        _remove(data, currNode-> left);
+    }
+
+
+
+
+}
+
+bool BST::contains(int data) {
+    if(rootNode == nullptr) {return false;}
+
+    return _search(data, rootNode);
 }
 
 void BST::clear() {

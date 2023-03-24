@@ -5,6 +5,8 @@
 #include "printing.h"
 #include "Node.h"
 
+using std::cout, std::endl;
+
 int main(int argc, char *argv[]) {
     // Write your test code here. Remember that `printing.h` gives you access to
     // the functions `pretty_print_tree` and `ugly_print_tree`, which you can
@@ -20,6 +22,9 @@ int main(int argc, char *argv[]) {
     tree.insert(4);
 //    println(tree.getRootNode()-> data);
     pretty_print_tree(tree);
+    cout << "Testing finding 7: " << tree.contains(7) << endl;
+    cout << "Testing finding -7: " << tree.contains(-7) << endl;
+    cout << "Testing finding 12: " << tree.contains(12) << endl;
 //    ugly_print_tree(tree);
 //extra change
     println("test?");

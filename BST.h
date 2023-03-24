@@ -16,6 +16,9 @@ class BST : public BSTInterface {
 
     bool _search(int data, Node* currNode);
 
+    bool _remove(int data, Node* currNode);
+
+    bool _isLeaf(Node* currNode);
 
 public:
     BST();
