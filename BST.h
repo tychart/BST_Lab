@@ -13,17 +13,17 @@ public:
         println("test?????");
     }
 
-    ~BSTInterface() = default;
+    ~BST() = default;
 
-    Node *getRootNode() const = 0;
+    Node *getRootNode() const;
 
-    bool insert(int data) = 0;
+    bool insert(int data);
 
-    bool remove(int data) = 0;
+    bool remove(int data);
 
-    bool contains(int data) = 0;
+    bool contains(int data);
 
-    void clear() = 0;
+    void clear();
 
 
 };
