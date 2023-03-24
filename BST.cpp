@@ -86,7 +86,7 @@ bool BST::remove(int data) {
 
 }
 
-bool BST::_remove(int data, Node *currNode) {
+bool BST::_remove(int data, Node* currNode) {
     if(currNode == nullptr) {return false;}
 
 //// Will remove if node has no children
@@ -102,6 +102,16 @@ bool BST::_remove(int data, Node *currNode) {
     if (data == currNode-> data) {
         if (currNode-> left != nullptr && currNode-> right != nullptr) {
 
+        } else if (currNode-> left != nullptr && currNode-> right == nullptr) {
+            Node* temp = currNode-> left;
+            delete currNode;
+            currNode = temp;
+            return true;
+        } else {
+            Node* temp = currNode-> right;
+            delete currNode;
+            currNode = temp;
+            return true;
         }
     }
 
@@ -119,6 +129,14 @@ bool BST::_remove(int data, Node *currNode) {
 
 
 
+}
+
+int BST::_getLargestValueInTree(Node* currNode) {
+    if (currNode-> right == nullptr) {
+        return currNode-> data;
+    } else {
+        return _getLargestValueInTree(currNode-> right);
+    }
 }
 
 bool BST::contains(int data) {

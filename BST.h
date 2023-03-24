@@ -20,6 +20,8 @@ class BST : public BSTInterface {
 
     bool _isLeaf(Node* currNode);
 
+    int _getLargestValueInTree(Node* currNode);
+
 public:
     BST();
 //    BST(Node rootNode);
