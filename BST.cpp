@@ -102,6 +102,15 @@ bool BST::_remove(int data, Node* &currNode) {
 
     if (data == currNode-> data) {
         if (currNode-> left != nullptr && currNode-> right != nullptr) {
+            int replaceData = _getLargestValueInTree(currNode-> left);
+            currNode-> data = replaceData;
+            _remove(replaceData, currNode-> left);
+
+
+
+
+
+
             return false; ///////Temporary
         } else if (currNode-> left != nullptr && currNode-> right == nullptr) {
             Node* temp = currNode-> left;

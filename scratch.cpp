@@ -15,17 +15,21 @@ int main(int argc, char *argv[]) {
     BST tree;
     tree.insert(3);
     tree.insert(4);
-    tree.insert(-7);
+    tree.insert(-6);
     tree.insert(-4);
     tree.insert(7);
     tree.insert(2);
     tree.insert(4);
+    tree.insert(5);
+    tree.insert(-8);
+    tree.insert(-12);
+    tree.insert(-7);
 //    println(tree.getRootNode()-> data);
     pretty_print_tree(tree);
     cout << "Testing finding 7: " << tree.contains(7) << endl;
     cout << "Testing finding -7: " << tree.contains(-7) << endl;
     cout << "Testing finding 12: " << tree.contains(12) << endl;
-    cout << "Testing removing 7: " << tree.remove(7) << endl;
+    cout << "Testing removing -20: " << tree.remove(-20) << endl;
 
 
     pretty_print_tree(tree);
