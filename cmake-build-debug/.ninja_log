@@ -1,0 +1,12 @@
+# ninja log v5
+0	7	1679618662743295938	CMakeFiles/scratch.dir/BST.cpp.o	d3db601fad3df48c
+0	261	1679618662995307708	CMakeFiles/scratch.dir/scratch.cpp.o	5a392dce5d29c0e6
+262	295	1679618663031309390	scratch	646f0de7c5ff9b7e
+0	252	1679618770940345662	CMakeFiles/scratch.dir/scratch.cpp.o	5a392dce5d29c0e6
+252	284	1679618770972347154	scratch	646f0de7c5ff9b7e
+0	258	1679619615571627513	CMakeFiles/scratch.dir/scratch.cpp.o	5a392dce5d29c0e6
+258	292	1679619615607629184	scratch	646f0de7c5ff9b7e
+1	155	1679619722292582004	CMakeFiles/scratch.dir/BST.cpp.o	d3db601fad3df48c
+1	151	1679619739409376553	CMakeFiles/scratch.dir/BST.cpp.o	d3db601fad3df48c
+1	268	1679619739525381938	CMakeFiles/scratch.dir/scratch.cpp.o	5a392dce5d29c0e6
+268	302	1679619739561383609	scratch	646f0de7c5ff9b7e

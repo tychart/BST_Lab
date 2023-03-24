@@ -1,0 +1,227 @@
+--- Part 1 output ---
+
+Pretty printing the tree...
+
+Empty tree
+
+Attempting to insert 8 into the tree...true
+Pretty printing the tree...
+
+ 8
+
+Attempting to insert 10 into the tree...true
+Pretty printing the tree...
+
+   8
+
+    10
+
+Attempting to insert 11 into the tree...true
+Pretty printing the tree...
+
+       8
+
+          10
+
+            11
+
+Attempting to insert 13 into the tree...true
+Pretty printing the tree...
+
+               8
+
+                      10
+
+                          11
+
+                            13
+
+Attempting to insert 12 into the tree...true
+Pretty printing the tree...
+
+                               8
+
+                                              10
+
+                                                      11
+
+                                                          13
+
+                                                        12    
+
+Attempting to insert 15 into the tree...true
+Pretty printing the tree...
+
+                               8
+
+                                              10
+
+                                                      11
+
+                                                          13
+
+                                                        12  15
+
+Attempting to insert 11 into the tree...false
+Pretty printing the tree...
+
+                               8
+
+                                              10
+
+                                                      11
+
+                                                          13
+
+                                                        12  15
+
+Attempting to insert 2 into the tree...true
+Pretty printing the tree...
+
+                               8
+
+               2                              10
+
+                                                      11
+
+                                                          13
+
+                                                        12  15
+
+Attempting to insert 6 into the tree...true
+Pretty printing the tree...
+
+                               8
+
+               2                              10
+
+                       6                              11
+
+                                                          13
+
+                                                        12  15
+
+Attempting to insert 14 into the tree...true
+Ugly printing the tree...
+
+8: 2 10
+2: __ 6
+6: __ __
+10: __ 11
+11: __ 13
+13: 12 15
+12: __ __
+15: 14 __
+14: __ __
+
+Attempting to insert 6 into the tree...false
+Ugly printing the tree...
+
+8: 2 10
+2: __ 6
+6: __ __
+10: __ 11
+11: __ 13
+13: 12 15
+12: __ __
+15: 14 __
+14: __ __
+
+Attempting to insert 9 into the tree...true
+Ugly printing the tree...
+
+8: 2 10
+2: __ 6
+6: __ __
+10: 9 11
+9: __ __
+11: __ 13
+13: 12 15
+12: __ __
+15: 14 __
+14: __ __
+
+Attempting to insert 4 into the tree...true
+Ugly printing the tree...
+
+8: 2 10
+2: __ 6
+6: 4 __
+4: __ __
+10: 9 11
+9: __ __
+11: __ 13
+13: 12 15
+12: __ __
+15: 14 __
+14: __ __
+
+Attempting to insert 1 into the tree...true
+Ugly printing the tree...
+
+8: 2 10
+2: 1 6
+1: __ __
+6: 4 __
+4: __ __
+10: 9 11
+9: __ __
+11: __ 13
+13: 12 15
+12: __ __
+15: 14 __
+14: __ __
+
+Attempting to insert 3 into the tree...true
+Ugly printing the tree...
+
+8: 2 10
+2: 1 6
+1: __ __
+6: 4 __
+4: 3 __
+3: __ __
+10: 9 11
+9: __ __
+11: __ 13
+13: 12 15
+12: __ __
+15: 14 __
+14: __ __
+
+Attempting to insert 5 into the tree...true
+Ugly printing the tree...
+
+8: 2 10
+2: 1 6
+1: __ __
+6: 4 __
+4: 3 5
+3: __ __
+5: __ __
+10: 9 11
+9: __ __
+11: __ 13
+13: 12 15
+12: __ __
+15: 14 __
+14: __ __
+
+Attempting to insert 7 into the tree...true
+Ugly printing the tree...
+
+8: 2 10
+2: 1 6
+1: __ __
+6: 4 7
+4: 3 5
+3: __ __
+5: __ __
+7: __ __
+10: 9 11
+9: __ __
+11: __ 13
+13: 12 15
+12: __ __
+15: 14 __
+14: __ __
