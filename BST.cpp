@@ -83,16 +83,17 @@ bool BST::_insert(int data, Node* currNode) {
 
 
 bool BST::remove(int data) {
-
+    return _remove(data, rootNode);
 }
 
-bool BST::_remove(int data, Node* currNode) {
+bool BST::_remove(int data, Node* &currNode) {
     if(currNode == nullptr) {return false;}
 
 //// Will remove if node has no children
     if(_isLeaf(currNode)) {
         if(currNode-> data == data) {
             delete currNode;
+            currNode = nullptr;
             return true;
         }
         println("Warning: data to remove not found");
@@ -101,7 +102,7 @@ bool BST::_remove(int data, Node* currNode) {
 
     if (data == currNode-> data) {
         if (currNode-> left != nullptr && currNode-> right != nullptr) {
-
+            return false; ///////Temporary
         } else if (currNode-> left != nullptr && currNode-> right == nullptr) {
             Node* temp = currNode-> left;
             delete currNode;

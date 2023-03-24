@@ -25,6 +25,12 @@ int main(int argc, char *argv[]) {
     cout << "Testing finding 7: " << tree.contains(7) << endl;
     cout << "Testing finding -7: " << tree.contains(-7) << endl;
     cout << "Testing finding 12: " << tree.contains(12) << endl;
+    cout << "Testing removing 7: " << tree.remove(7) << endl;
+
+
+    pretty_print_tree(tree);
+
+
 //    ugly_print_tree(tree);
 //extra change
     println("test?");
