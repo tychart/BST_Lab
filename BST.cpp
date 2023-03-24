@@ -95,15 +95,25 @@ bool BST::_remove(int data, Node *currNode) {
             delete currNode;
             return true;
         }
+        println("Warning: data to remove not found");
         return false;
     }
 
-    if (data < currNode-> data) {
-        if(currNode-> left == nullptr) {
-            println("Warning: data to remove not found");
-            return false;
+    if (data == currNode-> data) {
+        if (currNode-> left != nullptr && currNode-> right != nullptr) {
+
         }
-        _remove(data, currNode-> left);
+    }
+
+
+    if (data < currNode-> data) {
+//        if(currNode-> left == nullptr) {
+//            println("Warning: data to remove not found");
+//            return false;
+//        }
+        return _remove(data, currNode-> left);
+    } else {
+        return _remove(data, currNode-> right);
     }
 
 
